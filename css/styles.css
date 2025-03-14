@@ -1,0 +1,522 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+/* Design System: Variables */
+:root {
+    /* Colors */
+    --primary-green: #008142;
+    --accent-yellow: #FFCF01;
+    --neutral-black: #333333;
+    --neutral-white: #F5F5F5;
+    --neutral-gray: #CCCCCC;
+    --alert-red: #FF6F61;
+  
+    /* Typography */
+    --font-heading-primary: 'droid-serif', serif;
+    --font-heading-secondary: 'Poppins', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+    --font-accent: 'Montserrat', sans-serif;
+  
+    /* Font Sizes */
+    --font-size-h1: 3rem; /* 48px */
+    --font-size-h2: 2.25rem; /* 36px */
+    --font-size-h3: 1.75rem; /* 28px */
+    --font-size-body: 1rem; /* 16px */
+  
+    /* Line Height */
+    --line-height-body: 1.5;
+    --line-height-heading: 1.2;
+  
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+  
+    /* Border Radius */
+    --border-radius: 5px;
+  }
+
+  /* Body Spacing */
+html, body {
+    font-family: var(--font-body);
+    line-height: var(--line-height-body);
+    background-color: var(--neutral-white);
+    color: var(--neutral-black);
+    font-size: var(--font-size-body);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Headings */
+  h1 {
+    font-family: var(--font-heading-primary);
+    font-size: var(--font-size-h1);
+    line-height: var(--line-height-heading);
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h2 {
+    font-family: var(--font-heading-secondary);
+    font-size: var(--font-size-h2);
+    line-height: var(--line-height-heading);
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  h3 {
+    font-family: var(--font-heading-secondary);
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-heading);
+    color: var(--primary-green);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Paragraphs */
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Lists */
+  ul, ol {
+    margin: var(--spacing-md) 0;
+    /* padding-left: var(--spacing-lg); */
+  }
+  
+  /* Buttons */
+  .button {
+    /* font-family: var(--font-accent);
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer; */
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--neutral-white);
+    background: var(--primary-green);
+    border-radius: 50px; /* Rounded corners */
+    border: 3px solid var(--accent-yellow);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: center;
+  }
+
+  .button:hover {
+    background: var(--neutral-black);
+    transform: scale(1.05);
+}
+
+.match-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px; /* Adjust spacing from cards */
+}
+
+.match-me {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 52px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--neutral-white);
+  background: var(--primary-green);
+  border-radius: 50px;
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.match-me:hover {
+  background: var(--neutral-black);
+  transform: scale(1.05);
+}
+
+/* Centering Text Below Button */
+.match-text {
+  font-size: 1.2rem;
+  color: var(--neutral-white);
+  margin-top: 10px;
+  max-width: 500px; /* Keep the text from getting too wide */
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.apply-now {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--neutral-white);
+  background: var(--primary-green);
+  border-radius: 50px;
+  border: 3px solid var(--accent-yellow);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.apply-now:hover {
+  background: var(--neutral-black);
+  transform: scale(1.05);
+}
+
+/* Adds the right-facing arrow */
+.apply-now::after {
+  content: "➜";
+  font-size: 18px;
+  margin-left: 8px;
+}
+  
+  /* Primary Button */
+  button.primary {
+    background-color: var(--primary-green);
+    color: var(--neutral-white);
+    font-weight: bold;
+  }
+  button.primary:hover {
+    background-color: var(--neutral-black);
+  }
+  
+  /* Secondary Button */
+  button.secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+  }
+  button.secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--neutral-white);
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--primary-green);
+    color: var(--neutral-white);
+    padding: var(--spacing-md);
+  }
+  
+  header .logo {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+  }
+
+  header h1 {
+    color: var(--neutral-white);
+  }
+
+  header nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+  
+  header .nav-links {
+    list-style: none;
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+    justify-content: center;
+  }
+  
+  header .nav-links a {
+    color: var(--neutral-white);
+    text-decoration: none;
+    font-family: var(--font-accent);
+  }
+
+  .nav-links .apply-now {
+    margin-left: auto; /* Push it to the right */
+}
+
+  /* Landing Page */
+
+  .homepage {
+    background-color: #003b1e; /* Dark green */
+    background-image: url('../images/transparent_sun.png');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+  /* Main */
+  main {
+    flex: 1;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 2rem;
+    color: white;
+  }
+
+  .hero h1 {
+    color: var(--neutral-white);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero h2 {
+    color: var(--neutral-white)
+  }
+  
+  /* .programs {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-auto-rows: 1fr; 
+  } */
+  
+  /* .card {
+    background: #eaeaea;
+    height: 200px;
+    border-radius: 8px;
+  } */
+
+  .programs {
+    display: grid;
+    gap: 1rem;
+    justify-content: center;
+    align-items: top;
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+}
+
+/* Wrapper to hold the card and its text */
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+}
+
+/* Clickable Card Image */
+.card {
+    width: 250px; /* Adjust width as needed */
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+    display: block; /* Ensure it's clickable */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Oval Text Styling */
+.card-text {
+  background: rgba(255, 255, 255, 0.7); /* Semi-transparent white */
+  color: var(--neutral-black);
+  padding: 8px 16px;
+  border-radius: 30px; /* More rounded for oval shape */
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  width: 250px; /* Set a fixed width to match the widest text */
+}
+
+/* Lower the first and last cards on desktop */
+.card-1,
+.card-4 {
+  margin-top: 3rem; /* Move the cards down */
+}
+
+/* Individual Cards */
+.cybersecurity {
+    background-image: url('../images/cybersecurity.jpg');
+}
+
+.network-support {
+    background-image: url('../images/network-support.jpg');
+}
+
+.web-development {
+    background-image: url('../images/web-dev.jpg');
+}
+
+.it-systems {
+    background-image: url('../images/computer-systems.jpg');
+}
+
+
+  
+ /* Footer Styles */
+.site-footer {
+  background-color: black;
+  color: var(--neutral-white);
+  padding: 20px 40px 0 40px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+/* Left Section: Contact Info */
+.footer-left {
+  text-align: left;
+}
+
+.footer-left p {
+  color: var(--primary-green);
+  font-size: 16px;
+}
+
+.footer-left a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-left a:hover {
+  text-decoration: underline;
+}
+
+/* Center Section: Students & PTC Name */
+.footer-center {
+  text-align: center;
+}
+
+.footer-link {
+  color: var(--accent-yellow);
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-college {
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* Right Section: Sun Logo */
+.footer-right {
+  text-align: right;
+}
+
+.footer-sun {
+  width: 200px; /* Adjust as needed */
+}
+
+  /* Sections */
+  section {
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  /* Grid System */
+  .container {
+    width: 90%; /* Flexible width */
+    margin: 0 auto;
+    /* padding: var(--spacing-md); */
+  }
+  
+  /* Media Queries */
+
+  @media (max-width: 1064px) {
+    .programs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-1,
+    .card-4 {
+      margin-top: 0; /* Reset margin for tablet */
+    }
+}
+
+  @media (max-width: 1024px) {
+ 
+
+    nav {
+      flex-direction: column; /* Stack title and menu */
+      align-items: center;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      margin-top: 1rem; /* Add spacing between title and menu */
+    }
+  
+    nav ul li {
+      margin: 0.5rem 0; /* Spacing between menu items */
+      text-align: center;
+    }
+
+    .nav-links {
+      flex-direction: row;
+    }
+  
+    
+  }
+  
+  @media (max-width: 768px) {
+
+    html {
+      font-size: 1rem; /* Adjust root font size for tablets */
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+    }
+
+    .nav-links {
+      flex-direction: column;
+    }
+
+    .programs {
+      grid-template-columns: 1fr;
+  }
+  
+    .card-1,
+    .card-4 {
+      margin-top: 0; /* Reset margin for mobile */
+    }
+
+    .footer-container {
+      flex-direction: column;
+    }
+
+    .footer-left {
+      text-align: center;
+    }
+
+  }
+  

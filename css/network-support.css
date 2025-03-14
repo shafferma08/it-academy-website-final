@@ -1,0 +1,342 @@
+:root {
+    --primary-green: #008142;
+    --accent-yellow: #FFCF01;
+    --neutral-black: #333333;
+    --neutral-white: #F5F5F5;
+    --neutral-gray: #CCCCCC;
+    --alert-red: #FF6F61;
+}
+
+/* Desktop styles */
+
+/* General styles */
+
+h1 {
+    background-color: var(--accent-yellow);
+}
+
+/* Hero section */
+
+#hero-sect {
+    text-align: center;
+}
+
+#hero-sect h1 {
+    margin-bottom: 0;
+}
+
+#hero-sect img {
+    max-width: 80%;
+    border: 0.5rem solid var(--accent-yellow);
+}
+
+#hero-sect p {
+    color: var(--primary-green);
+}
+
+/* Overview section */
+
+/* Styles for accordion */
+.accordion {
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.accordion-top { /* The clickable header */
+    background-color: var(--primary-green);
+    color: var(--accent-yellow);
+    font-weight: bold;
+    border-top-left-radius: 0.8rem;
+    border-top-right-radius: 0.8rem;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.accordion-bottom { /* The content */
+    background-color: var(--neutral-white);
+    color: var(--neutral-black);
+    border-bottom-right-radius: 0.8rem;
+    border-bottom-left-radius: 0.8rem;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 10px;
+    transition: max-height 0.4s ease-out, padding 0.5s ease-out;
+}
+
+
+
+/* Styles for layout of overview section */
+
+#overview-container {
+    grid-template-columns: 2fr 1fr;
+}
+
+#overview-sect {
+    background-color: var(--neutral-black);
+    text-align: center;
+    color: var(--neutral-white);
+    padding-bottom: 2rem;
+    margin-bottom: 0;
+}
+
+#instructor {
+    background-color: var(--primary-green);
+    width: 80%;
+    margin: auto auto;
+    border-radius: 1rem;
+}
+
+#instructor h3 {
+    color:var(--accent-yellow);
+    border-bottom: 0.1rem solid var(--neutral-white);
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#instructor img {
+    max-width: 80%;
+    margin: 0.5rem;
+}
+
+#instructor p {
+    padding: 0.5rem;
+    padding-top: 0;
+}
+
+#testimonials {
+    background-color: var(--neutral-gray);
+    width: 80%;
+    max-width: 80%;
+    text-align: center;
+    color: var(--neutral-black);
+    margin: 0 auto;
+    border-radius: 0.8rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#testimonials h3 {
+    color: var(--neutral-black);
+    padding-top: 1rem;
+}
+
+#name {
+    padding-bottom: 1rem;
+}
+
+/* Certs section */
+
+#certs-sect {
+    color: var(--primary-green);
+    font-weight: bold;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+} /* Move this somewhere else later */
+
+#certs-container {
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+
+#certs-container img {
+    width: 50%;
+}
+
+#sec-plus {
+    width: 100%;
+}
+
+.divider-line {
+    border-bottom: 0.2rem solid var(--primary-green);
+    margin-right: 15%;
+    margin-left: 15%;
+}
+
+#apply-btn {
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+}
+
+/* Career Information section */
+
+#info-container {
+    grid-template-columns: 1fr 1fr;
+}
+
+#graph {
+    border: 0.5rem solid var(--primary-green);
+    width: 80%;
+    justify-self: center;
+    margin-bottom: 0.5rem;
+}
+
+#report {
+    color: var(--neutral-black);
+}
+
+#onestop-logo {
+    align-self: center;
+}
+
+#projected-mobile {
+    display: none;
+}
+
+#career-info-sect {
+    text-align: center;
+}
+
+#career-info-sect table {
+    margin: 0 auto;
+    width: 90%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#career-info-sect table th {
+    height: 2.5rem;
+    background-color: var(--primary-green);
+    color: var(--neutral-white)
+}
+
+#career-info-sect table td {
+    border: 1px solid black;
+    height: 2rem;
+}
+
+/* Future section */
+
+#future-sect {
+    text-align: center;
+}
+
+#yt {
+    width: 50%;
+    border: 0.5rem solid var(--accent-yellow);
+}
+
+.contact-field {
+    color: var(--neutral-white);
+    background-color: var(--primary-green);
+    border: 0.5rem solid var(--accent-yellow);
+    font-weight: bold;
+    margin: 0 auto;
+    width: 40%;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.contact-field-bottom {
+    position: relative;
+    bottom: 0.4rem;
+}
+
+.contact-field h2 {
+    color: var(--neutral-white);
+}
+
+/* Tablet styles (768px to 376px) */
+
+@media screen and (max-width: 768px) and (min-width: 376px) {
+
+    /* General styles */
+    .container {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Overview section */
+    #overview-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Certs section */
+    #certs-sect figure {
+        margin: 0.5rem;
+    }
+
+    #certs-sect img {
+        width: 60%;
+    }
+
+    /* Future section */
+    .contact-field {
+        width: 50%;
+    }
+
+    #yt {
+        width: 75%;
+    }
+}
+
+/* Mobile styles (375px and below) */
+
+@media screen and (max-width: 450px) {
+    /* General styles */
+    .container {
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    /* Certs section */
+    #certs-container {
+        grid-template-columns: 1fr;
+    }
+
+    /* Career section */
+    #info-container {
+        grid-template-columns: 1fr;
+    }
+
+    #graph {
+        width: 90%;
+    }
+
+    #onestop-logo {
+        margin-top: 0.5rem;
+    }
+
+    #onestop-logo img {
+        width: 60%;
+    }
+
+    #report {
+        font-size: 2rem;
+    }
+
+    #projected-desktop {
+        display: none;
+    }
+
+    #projected-mobile {
+        display: block;
+        color: var(--primary-green);
+        font-weight: bold;
+    }
+
+    #projected-mobile li {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    #projected-mobile li::marker {
+        content: "▶ ";
+        font-size: 1.15rem;
+        color: var(--primary-green)
+    }
+
+    /* Future section */
+    .contact-field {
+        width: 70%;
+    }
+    
+    #yt {
+        width: 95%;
+    }
+}

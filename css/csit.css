@@ -1,0 +1,840 @@
+html, body {
+  min-width: 100vw; /* Prevents shrinking */
+  min-height: 100vh; /* Ensures full height */
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  display: block;
+}
+/* background image section */
+
+
+.background-container {
+  min-height: 400px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../CSIT_photos/resized_MB.png');
+  position: relative; /* allows absolute postioning inside */
+  display: flex; /* Enables flexbox */
+  align-items: center; /* centers vertically */
+  justify-content: center; /* centers horizontally */
+  
+}
+
+
+
+
+.overlay {
+  width: 1400px;
+  height: 340px;
+  background-color: var(--primary-green);
+  text-align: center;
+  border-radius: var(--border-radius-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.overlay h1 {
+  color: var(--neutral-white);
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.overlay h3 {
+  color: var(--accent-yellow);
+  
+}
+
+.badge-section {
+  display: flex;
+ flex-direction: row;
+  justify-content: center;
+  
+  
+}
+
+
+
+.badge-section section {
+  display: flex;
+  justify-content: space-between; /* Keeps the two containers side by side */
+  gap: 30px; /* Adds space between the containers */
+  flex-wrap: nowrap; /* Ensures they stay side by side and don't wrap */
+}
+
+/* General container styles */
+.container-wrapper {
+  display: flex;
+  gap: 30px; /* Adds space between the yellow and green boxes */
+}
+
+.container-wrapper p {
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  width: 600px;
+  border-radius: 20px;
+}
+
+/* Green box specific styles */
+.green-box {
+  display: flex;
+  justify-content: space-between; /* Distribute space inside the green box */
+  align-items: flex-start; /* Aligns items at the top */
+  background-color: var(--primary-green); /* Green background */
+  padding-top: 50px;
+}
+
+.green-box p {
+  color: var(--neutral-white);
+}
+
+/* Yellow box specific styles */
+.yellow-box {
+  background-color: var(--accent-yellow); /* Apply yellow background */
+  display: flex;
+  text-align: center;
+  gap: 20px;
+  padding: 20px; /* Adds padding to the yellow box for spacing */
+}
+/* Button and image styles */
+.button-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers content vertically */
+  justify-content: center; /* Centers content horizontally */
+  text-align: center;
+}
+
+.button-t h3 {
+  color: var(--neutral-black);
+}
+
+.comptia img {
+  border-radius: 50%;
+  height: 200px;
+}
+
+/* Heading color styles */
+.certification h3,
+.duration h3,
+.type h3 {
+  color: var(--accent-yellow);
+}
+
+
+.middle {
+  background-color: var(--neutral-black);
+  display: flex;
+ justify-content: space-around;
+ gap: 20px;
+ align-items: center;
+  /* width: 100%; */
+
+  
+}
+
+.learning {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 80%; /* Set the width to 80% or a specific value */
+  max-width: 600px; /* Optional: Set a max-width for the button */
+  
+}
+
+.certications-img {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.certications-img img {
+  flex: 1;
+  text-align: center;
+}
+
+.learn-img img {
+  border-radius: 50%;
+}
+
+
+
+/* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: var(--primary-green);
+  color: var(--accent-yellow);
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion h3 {
+  color: var(--accent-yellow);
+  line-height: normal;
+  font-size: var(--font-size-body);
+  margin-bottom: 0px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .accordion:hover {
+  background-color: #ccc;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 0 18px;
+  background-color: var(--neutral-gray);
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+ 
+}
+
+.panel p {
+  
+}
+
+/* Testimonials Slider */
+
+/* Slideshow container */
+.quote-slideshow-container {
+  position: relative;
+  background-color: var(--neutral-gray);
+  margin-top: 40px;
+  max-width: 600px;  /* Set a max-width for the slideshow */
+  width: 100%;      /* Ensure responsiveness */
+  margin-top: 20px;
+  overflow: hidden;  /* Hide overflow from elements */
+  border-radius: var(--border-radius-3);
+  
+}
+
+/* Quote slide styling */
+.quote-slide {
+  text-align: center;
+  padding: 15px;
+  display: none; /* Hide all slides by default */
+  background-color: var(--neutral-gray);
+  max-width: 75%;
+
+  margin: auto;
+}
+
+.quote-slide:first-child {
+  display: block; /* Show the first slide */
+}
+
+/* Next & previous buttons */
+.quote-prev, .quote-next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -30px;
+  padding: 16px;
+  color: var(--neutral-white);
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: 0.6s ease;
+}
+
+/* Position the "next button" to the right */
+.quote-next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color */
+.quote-prev:hover, .quote-next:hover {
+  background-color: var(--neutral-black);
+  color: var(--accent-yellow);
+}
+
+/* Dot/bullet container */
+.quote-dot-container {
+  text-align: center;
+  padding: 10px;
+  background: #ddd;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Dot/bullet styling */
+.quote-dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 4px; /* Slightly more space between dots */
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+/* Active dot styling */
+.active, .quote-dot:hover {
+  background-color: var(--accent-yellow);
+}
+
+
+
+/* Italicize the quote text */
+q { font-style: italic; }
+
+/* Styling for the instructor section */
+.instructor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.green {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary-green);
+  padding-top: 20px;
+  border-radius: 10px;
+}
+
+.cotton-pht img {
+  border-radius: 50%;
+}
+
+.instructor-text h2{
+  color: var(--neutral-white);
+}
+
+.rob-main-container h2{
+  color: var(--accent-yellow);
+}
+
+.rob-main-container {
+display: flex;
+flex-direction: column;
+align-items: center;
+color: var(--neutral-white);
+font-weight: 700;
+padding: 20px;
+}
+
+
+/* bottom div */
+
+.bottom {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--neutral-black);
+  padding-top: 35px;
+  margin: auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.prev:hover, .next:hover {
+  color: var(--accent-yellow);
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: var(--primary-green);
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.graph-box {
+  background-color: var(--neutral-gray);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-3);
+  padding-top: 15px;
+  height: 450px;
+  margin: auto;
+  
+  
+}
+
+.graph {
+  width: 100%;
+  max-width: 600px; /* Adjust for design needs */
+  height: 400px; /* Ensures readability */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: rgba(0, 129, 66, 0.1); /* Light school green tint for subtle styling */
+  border-radius: 10px;
+}
+
+
+
+.graph canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.graph-header h4 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #008142; /* School green */
+  margin-bottom: 5px;
+}
+
+.graph-header p {
+  font-size: 14px;
+  color: #333; /* Neutral text color */
+  line-height: 1.5;
+}
+
+
+/* AUTO SLDIER STYLES */
+@media (min-width: 905px) {
+  .auto-slider {
+      display: none;
+  }
+}
+
+/* Mobile & Tablet Slider Styles */
+.auto-slider {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  height: 250px;
+  overflow: hidden;
+  margin: 20px auto;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+  display: flex;
+  opacity: 1;
+  background-color: var(--neutral-black);
+}
+
+.slide img {
+  border-radius: 50%;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+
+
+.footer-img-box {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+}
+
+.footer-img {
+  flex: 1;
+  text-align: center;
+  
+}
+
+
+
+/* Media Queries For smaller screens: Mobile */
+@media screen and (max-width: 400px){
+  
+
+  .overlay h1 {
+    font-size: 2.5rem;
+    margin-bottom: .8rem;
+  }
+
+  .overlay h3 {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container {
+   max-width: 380px;
+   max-height: 200px;
+  }
+
+  .comptia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comptia img {
+    height: 150px;
+  }
+  
+  .button-t h3 {
+    font-size: 1.2rem;
+  }
+
+}
+
+
+@media screen and (max-width: 561px) {
+  
+  body{
+    width: 100%;
+    
+    
+  }
+
+  .background-container {
+    background-image: none;
+  }
+
+  .badge-section {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .container-wrapper {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+  }
+
+  .middle {
+    flex-direction: column; /* Stack items vertically */
+    gap: 40px; /* Adjust space between items */
+  }
+
+  .learning {
+    display: none;
+  }
+
+  .certications-img {
+    flex-direction: column; /* Stack images vertically */
+    gap: 30px; /* Adjust space between images */
+  }
+
+  .container {
+    width: 100%; /* Ensure the container takes full width */
+    margin-bottom: 20px; /* Add space between containers */
+  }
+
+  .button-div {
+    flex-direction: column; /* Stack button and text vertically */
+  }
+
+  .bottom {
+    flex-direction: column;
+  }
+
+  iframe {
+    width: 340px;
+    height: 260px;
+  }
+
+  .mySlides  img{
+    width: 340px;
+    height: 260px;
+
+  }
+
+  .footer-img-box{
+    flex-direction: column;
+  }
+} 
+
+
+/* Media Queries For smaller screens: tablet */
+
+/* Larger mobile screens & small tablets */
+@media screen and (min-width: 562px) and (max-width: 767px) {
+  .background-container {
+    background-image: none;
+    
+  }
+
+  .overlay {
+    border-radius: 0;
+    padding: 40px;
+  }
+
+  .container-wrapper {
+    flex-direction: column;
+  }
+
+  .container {
+    max-width: 460px;
+  }
+
+  .comptia img {
+    /* display: none; */
+  }
+
+  .middle {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .learning {
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .certications-img {
+    max-width: 500px;
+    width: 100%;
+    
+  }
+
+  iframe {
+    width: 500px;
+    height: 325px;
+  }
+
+  
+
+  .mySlides {
+    width: 500px;
+    height: 325px;
+
+  }
+
+.prev, .next {
+  color: var(--neutral-white);
+}
+
+
+  .bottom {
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+  .graph-box {
+    max-width: 500px;
+  }
+
+  .footer-img-box {
+    max-width: 550px;
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+    
+  }
+  .footer-img-box img {
+    width: 80%;
+  }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 905px){
+  .container-wrapper{
+    flex-direction: column;
+  }
+
+  .container {
+    width: 500px;
+    
+  }
+
+  .middle {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .green-box h3, .button-t h3{
+    font-size: 1.6rem;
+  }
+
+  .green-box p {
+    font-size: .8rem;
+  }
+
+  .comptia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comptia img {
+    height: 200px;
+  }
+
+  .green {
+    flex-direction: row;
+    padding: 10px;
+    width: 550px;
+  }
+
+  .cotton-pht {
+    padding-top: .5rem;
+  }
+  
+  .rob-main-container {
+    text-align: center;
+  }
+
+  .bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    
+
+}
+
+}
+
+  
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+  .overlay {
+    width: 900px;
+    height: 300px;
+  }
+
+  .container-wrapper {
+    width: 100%;
+  
+}
+
+.middle {
+  gap: 20px;
+}
+
+.learning {
+  width: 400px;
+}
+
+
+
+.certications-img img {
+  width: 125px;
+}
+
+.instructor {
+  justify-content: center;
+}
+
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1400px){
+
+
+
+}
