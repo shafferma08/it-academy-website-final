@@ -51,10 +51,10 @@ let Both = false;
 
 function startSurvey() {
     AnswerFour.style.display = "none";
-    Question.innerHTML = "What is your preferred campus?";
-    AnswerOne.innerHTML = "Clearwater Campus";
-    AnswerTwo.innerHTML = "St. Pete Campus";
-    AnswerThree.innerHTML = "Both/Either Campus Works For Me";
+    Question.innerHTML = "What field are you most interested in pursuing?";
+    AnswerOne.innerHTML = "Technology & Engineering";
+    AnswerTwo.innerHTML = "Health & Wellness";
+    AnswerThree.innerHTML = "Creative Arts & Design";
 
     AnswerOne.onclick = function () { questionTwo("Clearwater"); };
     AnswerTwo.onclick = function () { questionTwo("StPete"); };
@@ -80,7 +80,7 @@ function questionTwo(Location) {
 function questionThree(Location, AnswerChoice) {
     Question.innerHTML = "What is your preferred method of working?";
 
-    if (Location === "Clearwater") {
+    if (Location === "Technology & Engineering") { // Formerly clearwater
         switch (AnswerChoice) {
             case 1:
                 AnswerOne.innerHTML = "Diagnosing and repairing car engines."; //done
@@ -107,7 +107,7 @@ function questionThree(Location, AnswerChoice) {
                 AnswerFour.innerHTML = "Installing and maintaining HVAC systems."; //done
                 break;
         }
-    } else if (Location === "StPete") {
+    } else if (Location === "Health & Wellness") { // Formerly StPete
         switch (AnswerChoice) {
             case 1:
                 AnswerOne.innerHTML = "Repairing and customizing vehicle exteriors.";
@@ -134,7 +134,7 @@ function questionThree(Location, AnswerChoice) {
                 AnswerFour.innerHTML = "Crafting custom metal and jewelry pieces.";
                 break;
         }
-    } else if (Location === "Both") {
+    } else if (Location === "Creative Arts & Design") { // Formerly Both
         switch (AnswerChoice) {
             case 1:
                 AnswerOne.innerHTML = "Diagnosing and repairing car engines.";
@@ -171,7 +171,7 @@ function questionThree(Location, AnswerChoice) {
 
 // Function to update the program list based on user's location and final choice
 function questionFourList(Location, FinalAnswerChoice) {
-    if (Location == "Clearwater") {
+    if (Location == "Technology & Engineering") {
         switch(FinalAnswerChoice) {
             case "Diagnosing and repairing car engines.":
             case "Maintaining and servicing diesel trucks and equipment.":
@@ -230,7 +230,7 @@ function questionFourList(Location, FinalAnswerChoice) {
                 ProgramThree.innerHTML = "Electronic Systems Integration and Automation";
                 ProgramFour.innerHTML = "Computer Systems & Information Technology";
         }
-    } else if (Location == "StPete") {
+    } else if (Location == "Health & Wellness") {
         switch(FinalAnswerChoice) {
             case "Repairing and customizing vehicle exteriors.":
             case "Diagnosing and fixing car engines.":
@@ -278,14 +278,14 @@ function questionFourList(Location, FinalAnswerChoice) {
                 // Skilled Trades & Industrial Technology (Working with tools or machinery)
                 Interests.innerHTML = "Based on your interest in working with tools and machinery, here are some program suggestions for you...";
                 ProgramOne.innerHTML = "Electricity";
-                ProgramTwo.innerHTML = "HVACR 1";
+                ProgramTwo.innerHTML = "HVAC 1";
                 ProgramThree.innerHTML = "Welding Technology";
                 ProgramFour.innerHTML = "Welding Technology Advanced";
                 ProgramFive.innerHTML = "Plumbing";
                 ProgramSix.innerHTML = "Jewelry Design and Repair 1";
                 break;
         }
-    } else if (Location == "Both") {
+    } else if (Location == "Creative Arts & Design") {
         switch(FinalAnswerChoice) {
             case "Diagnosing and repairing car engines.":
             case "Maintaining and servicing diesel trucks and equipment.":
