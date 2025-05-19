@@ -381,6 +381,7 @@ html, body {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 /* Left Section: Contact Info */
@@ -431,6 +432,7 @@ html, body {
 
 .footer-sun {
   width: 200px; /* Adjust as needed */
+  display: block;
 }
 
   /* Sections */
