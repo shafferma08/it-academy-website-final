@@ -302,7 +302,7 @@ html, body {
     justify-content: center;
     align-items: top;
     padding: 2rem;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns by default */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
 }
 
 /* Wrapper to hold the card and its text */
@@ -347,7 +347,7 @@ html, body {
 /* Lower the first and last cards on desktop */
 .card-1,
 .card-4 {
-  margin-top: 3rem; /* Move the cards down */
+  /* margin-top: 3rem; Move the cards down */
 }
 
 /* Individual Cards */
@@ -447,17 +447,6 @@ html, body {
   
   /* Media Queries */
 
-  @media (max-width: 1064px) {
-    .programs {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .card-1,
-    .card-4 {
-      margin-top: 0; /* Reset margin for tablet */
-    }
-}
-
   @media (max-width: 1024px) {
  
 
@@ -479,7 +468,6 @@ html, body {
     .nav-links {
       flex-direction: row;
     }
-  
     
   }
   
@@ -504,19 +492,18 @@ html, body {
     .programs {
       grid-template-columns: 1fr;
   }
-  
-    .card-1,
-    .card-4 {
-      margin-top: 0; /* Reset margin for mobile */
+
+    .card-container {
+      margin-top: 2rem;
     }
 
     .footer-container {
-      flex-direction: column;
-    }
+    flex-direction: column;
+  }
 
     .footer-left {
-      text-align: center;
-    }
-
+    text-align: center;
   }
+
+}
   
